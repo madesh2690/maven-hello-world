@@ -1,6 +1,6 @@
 node('master'){
     
-     stage('scm'){
+     stage('Clean and SCM'){
           deleteDir()
           //git url:'https://github.com/madesh2690/maven-hello-world.git'
           //checkout ([$class: 'GitSCM', branchs: [[name: '*/java7checker']], userRemoteConfigs: [[url: 'https://github.com/madesh2690/maven-hello-world.git']]]) 
@@ -18,8 +18,13 @@ node('master'){
           
           
                 }
-     stage('SonarQube'){
+     stage('Test'){
+         
+         echo "Testing application"
           }
-     
+     stage('Deploy')
+    {
+        echo "Deploying application"
+    }
      
 }
